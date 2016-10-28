@@ -12,7 +12,8 @@ songs.unshift("Past Lives by Borns on the album Dopamine");
 songs.push("Waste A Moment by Kings of Leon on the album Walls");
 
 for (var i = 0; i <= songs.length; i++) {
-  var newSongs = songs[i].replace(/\*|\>|\(\!|\@/g, " - " );
+  var newSongs = songs[i].replace(/>/g, " - " ).replace(/[!*\(@]/g, "");
+  // remember to put characters in brackets so it looks at the whole group
   console.log("newSongs", newSongs);
   document.getElementById("songs").innerHTML += `<div>${newSongs}</div>`;
 }
